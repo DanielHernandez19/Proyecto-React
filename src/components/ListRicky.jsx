@@ -1,24 +1,28 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useState, useEffect } from 'react'
+import Tarjeta from './Tarjeta';
 
 export default function ListRicky() {
 
-    const[rickys, setList]=useStates([]);
+    const [personaje, setPersonaje] = useState({});
 
-    const obtenerList = async () =>{
+    const obtenerPersonajes = async () =>{
         let respuesta = await fetch('https://rickandmortyapi.com/api/character');
         let datos = await respuesta.json();
-        setList(datos.results);
-
+        setPersonaje(datos.results);
     }
 
+    useEffect(() => {
+        obtenerPersonajes();
+    }, []);
 
-    useEffect(() => {obtenerList();}, []);
-  return (
+    console.log(personaje);
+    return (
     <div className='container'>
-        <h1 className='text-center fst-italic'>Lista Pokemones</h1>
+        <h1 className='text-center fst-italic'>Lista Personajes</h1>
         <div className='row'>
             {
-                pokemones.map((personajes, indice) => {
+                personaje.map((personajes, indice) => {
                     /**
                     * Enviando la informacion del estado a otro componente mediante las props
                     */
