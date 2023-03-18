@@ -1,14 +1,13 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes, Link } from 'react-dom'
-import ListRicky from './ListRicky.jsx'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
+import ListaPersonajes from './axios/ListaPersonajes'
 
-
-export default function Navbar(props) {
+export default function Navbar() {
   return (
     <BrowserRouter>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Bienvenido</a>
+          <a className="navbar-brand" href="#">Bienvenido, </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -33,7 +32,7 @@ export default function Navbar(props) {
         </div>
       </nav>
       <Routes>
-        <Route path='/' element={<ListRicky />} />
+        <Route path='/' element={<ListaPersonajes />} />
       </Routes>
     </BrowserRouter>
   )
