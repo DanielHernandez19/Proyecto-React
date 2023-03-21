@@ -15,13 +15,13 @@ export default function Navbar() {
             <div className="navbar-nav">
               <ul className='navbar-nav'>
                 <li className='nav-item'>
-                  <Link to="/" className='nav-link'>Home</Link>
+                  <a href="#" className="nav-link" aria-current="page">Home</a>
                 </li>
                 <li className='nav-item'>
                   <a className="nav-link " aria-current="page" href="#">Formulario</a>
                 </li>
                 <li className='nav-item'>
-                  <a className="nav-link " aria-current="page" href="#">Personajes</a>
+                  <Link to="/personajes" className='nav-link'>Personajes</Link>
                 </li>
                 <li className='nav-item'>
                   <a className="nav-link " aria-current="page" href="#">Perfiles</a>
@@ -32,7 +32,7 @@ export default function Navbar() {
         </div>
       </nav>
       <Routes>
-        <Route path='/' element={<ListaPersonajes />} />
+        <Route path='/personajes' element={<ListaPersonajes />} />
       </Routes>
     </BrowserRouter>
   )
