@@ -5,12 +5,14 @@ import Paginacion from './Paginacion';
 
 export default function ListaPersonajes() {
 
-    const [listaPersonaje, setListaPersonaje] = useState([]);
-    const [info, setInfo] = useState({});
+    const [listaPersonaje, setlistaPersonaje] = useState([]);
+    const [info, setInfo] = useState([]);
 
-    const personajes = () => {
-        axios.get('https://rickandmortyapi.com/api/character').then((response) => {
-            setListaPersonaje(response.data.results);
+    const url = 'https://rickandmortyapi.com/api/character';
+
+    const personajes = (url) => {
+        axios.get(url).then((response) => {
+            setlistaPersonaje(response.data.results);
             setInfo(response.data.info);
             console.log(response.data.results);
             console.log(response.data.info);
@@ -18,8 +20,6 @@ export default function ListaPersonajes() {
             console.log(error);
         })
     }
-
-    useEffect(() => { personajes() }, []);
 
     const onPrevious = () => {
         personajes(info.prev);
@@ -29,23 +29,30 @@ export default function ListaPersonajes() {
         personajes(info.next);
     }
 
+    useEffect(() => {
+        personajes(url)
+    }, []);
+
     return (
         <div>
             <div className='container'>
                 <h1 className='text-center fst-italic'>Lista Personajes</h1>
                 <div className='row'>
+                    <Paginacion prev={info.prev} next={info.next} onPrevious={onPrevious} onNext={onNext} />
                     {
                         listaPersonaje.map((persona, indice) => {
                             return (
                                 <div className='col-md-4 mt-4' >
-                                    <br />
                                     <Tarjeta key={indice} personaje={persona} />
                                     <br />
+
                                 </div>
                             )
                         })
                     }
                     <Paginacion prev={info.prev} next={info.next} onPrevious={onPrevious} onNext={onNext} />
+                    <br />
+
                 </div>
             </div>
         </div>

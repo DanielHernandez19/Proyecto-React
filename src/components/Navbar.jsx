@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import ListaPersonajes from './axios/ListaPersonajes'
+import Formulario from './Formulario'
 
 export default function Navbar() {
   return (
@@ -18,10 +19,10 @@ export default function Navbar() {
                   <a href="#" className="nav-link" aria-current="page">Home</a>
                 </li>
                 <li className='nav-item'>
-                  <a className="nav-link " aria-current="page" href="#">Formulario</a>
+                  <Link to="/personajes" className='nav-link'>Personajes</Link>
                 </li>
                 <li className='nav-item'>
-                  <Link to="/personajes" className='nav-link'>Personajes</Link>
+                  <Link to="/formulario" className='nav-link'>Formulario</Link>
                 </li>
                 <li className='nav-item'>
                   <a className="nav-link " aria-current="page" href="#">Perfiles</a>
@@ -33,6 +34,7 @@ export default function Navbar() {
       </nav>
       <Routes>
         <Route path='/personajes' element={<ListaPersonajes />} />
+        <Route path='/formulario' element={<Formulario />} />
       </Routes>
     </BrowserRouter>
   )

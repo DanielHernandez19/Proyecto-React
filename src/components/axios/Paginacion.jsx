@@ -12,7 +12,7 @@ export default function Paginacion({ prev, next, onPrevious, onNext }) {
 
     return (
         <div>
-            <ul className='pagination'>
+            <ul className='pagination justify-content-center'>
                 {
                     prev ? (
                         <li className='page-item'>

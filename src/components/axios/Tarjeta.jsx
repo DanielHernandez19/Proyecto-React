@@ -2,20 +2,17 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
 
-export default function Tarjeta({ personaje, infor, prev, next }) {
+export default function Tarjeta({ personaje }) {
 
     const [persona, setPersona] = useState({});
     const [origin, setOrigin] = useState({});
-
 
     const obtenerPersonaje = (url) => {
         axios.get(url).then((response) => {
             setPersona(response.data);
             setOrigin(response.data.origin);
-
         })
     }
-
 
     useEffect(() => {
         obtenerPersonaje(personaje.url);
