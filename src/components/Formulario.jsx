@@ -4,28 +4,24 @@ import React, { useState } from 'react'
 export default function Formulario() {
 
     const [personaje, setPersonaje] = useState({});
-    const [nombre, setNombre] = useState("");
+    const [name, setName] = useState("");
     const [origin, setOrigin] = useState({});
 
     const obtenerPersonajeByName = async () => {
-        /** hacemos referencia al nombre que manejamos en el estado para obtener informacion de dicho pokemon */
-        const respuesta = await fetch(`https://rickandmortyapi.com/api/character/${nombre}`);
+        const respuesta = await fetch(`https://rickandmortyapi.com/api/character/${name}`);
         const datos = await respuesta.json();
         setPersonaje(datos);
         setOrigin(datos.origin);
     }
     const handleName = (e) => {
-        /** capturando el value del input */
-        //console.log(e.target.value);
-        /** llamando al estado nombre para guardar el value del input */
-        setNombre(e.target.value);
+        setName(e.target.value);
     }
-    /** asignando el metodo del formulario */
+
     const handleSubmit = (e) => {
         obtenerPersonajeByName();
-        /** cancelando el boton submit */
         e.preventDefault();
     }
+
     return (
         <div className='container'>
             <h1 className='text-center fst-italic'>Encuentra a tu Personaje</h1>

@@ -8,7 +8,7 @@ export default function ListaPersonajes() {
     const [listaPersonaje, setlistaPersonaje] = useState([]);
     const [info, setInfo] = useState([]);
 
-    const url = 'https://rickandmortyapi.com/api/character';
+    const url1 = 'https://rickandmortyapi.com/api/character';
 
     const personajes = (url) => {
         axios.get(url).then((response) => {
@@ -30,7 +30,7 @@ export default function ListaPersonajes() {
     }
 
     useEffect(() => {
-        personajes(url)
+        personajes(url1)
     }, []);
 
     return (

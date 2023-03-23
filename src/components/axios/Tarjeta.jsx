@@ -11,12 +11,13 @@ export default function Tarjeta({ personaje }) {
         axios.get(url).then((response) => {
             setPersona(response.data);
             setOrigin(response.data.origin);
+
         })
     }
 
     useEffect(() => {
-        obtenerPersonaje(personaje.url);
-    }, [])
+        obtenerPersonaje(personaje.url)
+    }, [persona]);
 
     const idModal = `#${persona.id}`;
     return (
