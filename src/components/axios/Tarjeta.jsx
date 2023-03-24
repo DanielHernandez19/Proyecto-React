@@ -11,7 +11,6 @@ export default function Tarjeta({ personaje }) {
         axios.get(url).then((response) => {
             setPersona(response.data);
             setOrigin(response.data.origin);
-
         })
     }
 
