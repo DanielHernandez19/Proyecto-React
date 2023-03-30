@@ -5,7 +5,7 @@ import LoginButton from './components/LoginButton';
 
 function App() {
   const { user, isAuthenticated } = useAuth0();
-  console.log(window.location.origin)
+  console.log(window.location.origin);
   return (
     <div>
       {isAuthenticated ? (

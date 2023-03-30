@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import ListaPersonajes from './axios/ListaPersonajes'
 import BuscarStatus from './BuscarStatus'
 import Formulario from './Formulario'
-import LogoutButton from './logoutButton'
+import LogoutButton from './LogoutButton'
 
 export default function Navbar(props) {
   return (
