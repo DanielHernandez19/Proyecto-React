@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import ListaPersonajes from './axios/ListaPersonajes'
 import BuscarStatus from './BuscarStatus'
 import Formulario from './Formulario'
-import Desarrolladores from './Desarrolladores'
+import Desarrollador from './Desarrollador'
 
 
 export default function Navbar() {
@@ -42,7 +42,7 @@ export default function Navbar() {
         <Route path='/personajes' element={<ListaPersonajes />} />
         <Route path='/formulario' element={<Formulario />} />
         <Route path='/status' element={<BuscarStatus />} />
-        <Route path='/perfil' element={<Desarrolladores />} />
+        <Route path='/perfil' element={<Desarrollador />} />
       </Routes>
     </BrowserRouter>
   )

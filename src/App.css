@@ -1,8 +1,9 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f6f7;
+  background-image: url(./components/imagenes/ricky.jpg);
 }
 
 .logo {
@@ -11,6 +12,7 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -33,10 +35,126 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
 .read-the-docs {
   color: #888;
 }
+
+.card-img{
+  padding: 2rem;
+  width: 31rem;
+  height: 32rem;
+}
+
+h1{
+  padding-top: 100px;
+  text-align: center;
+}
+
+@media (max-width: 768px){
+  .card-img{
+    padding: 2rem;
+    width: 19rem;
+    height: 21rem;
+  }
+
+  .card-body img{
+    margin-left: -1rem;
+    padding: 1rem;
+    width: 14rem;
+    height: 15rem;
+  }
+
+  .contenedor-desarrollador{
+    padding: 1rem 0;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container .contenedor-desarrollador img{
+    width: 300px;
+  }
+
+  .boton{
+    display: block;
+  }
+
+  .navbar{
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.titulo-nombre{
+  color: #1c1e4d;
+  text-align: center;
+}
+
+.texto{
+  margin: 25px 0;
+  font-weight: bold;
+  font-family: 'Museo Sanz';
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.contenedor-desarrollador{
+  padding: 1rem 0;
+  background-color: #b9b8b87a;
+  margin-top: 15px;
+}
+
+.contenedor-desarrollador img{
+  padding: 2rem;
+    width: 450px;
+}
+
+.contenedor-principal{
+  text-align: center;
+  padding: 3rem;
+  padding-top: 5rem;
+}
+
+.descripcion{
+  text-align: center;
+}
+
+.descripcion a{
+  text-decoration: none;
+}
+
+.contenedor-desarrollador .boton{
+  border: none;
+  padding: 1rem;
+  text-transform: uppercase;
+  background-color: #1c1e4d;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+}
+
+@media (min-width:768px) and (max-width:1500px){
+
+  .contenedor-desarrollador{
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+  }
+
+  .contenedor-desarrollador img{
+    padding: 2rem;
+    width: 450px;
+  }
+
+  .navbar{
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  width: 100%;
+  }
+}
+
