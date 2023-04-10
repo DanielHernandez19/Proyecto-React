@@ -8,7 +8,6 @@ import vg3 from './imagenes/vladi.jpg'
 export default function Desarrolladores() {
   return (
     <div className="container">
-
       <h1>Conoce un poco acerca de los Desarrolladores de este proyecto</h1>
       <div className="container">
         <div className='contenedor-desarrollador'>
