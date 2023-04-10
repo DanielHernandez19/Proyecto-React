@@ -7,7 +7,6 @@ import vg3 from './imagenes/vladi.jpg'
 
 export default function Principal() {
     return (
-
         <div>
             <div className='back-prin'>
                 <div className="textoh">

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import './App.css'
 import { useAuth0 } from '@auth0/auth0-react'
 import Login from './components/Login'
+import Principal from './components/Principal'
 
 function App() {
   const { user, isAuthenticated } = useAuth0();
